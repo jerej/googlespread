@@ -44,32 +44,21 @@ To use simply do::
 Methods
 *******
 
-    def __init__(self, secret_json=None,
-                 scope="",
-                 redirect_uri="http://localhost",
-                 user_agent="MyClient/1.0"):
+    def __init__(self, secret_json=None, scope="", redirect_uri="http://localhost", user_agent="MyClient/1.0"):
 
-    def auth(self, secret_json,
-             scope="",
-             redirect_uri="http://localhost",
-             user_agent="MyClient/1.0"):
+    def auth(self, secret_json, scope="", redirect_uri="http://localhost", user_agent="MyClient/1.0"):
 
         Setup and authorize the connection using the data provided either at Class instantiation or the auth method.  Note, if the app does not have access to launch a web browser to complete the authorization to the user's account, then watch the console for offline instructions.
 
-    def start_client(self,
-                     spreadsheet=None, spreadsheet_id=None,
-                     worksheet=None, worksheet_id=None):
+    def start_client(self, spreadsheet=None, spreadsheet_id=None, worksheet=None, worksheet_id=None):
 
         Setup the client connection to the correct worksheet and authorize it.
 
-    def set_spreadsheet(self,
-                        spreadsheet=None, spreadsheet_id=None):
+    def set_spreadsheet(self, spreadsheet=None, spreadsheet_id=None):
 
         Set/change the spreadsheet_id being used by the client using either the name or ID
 
-    def set_worksheet(self,
-                      spreadsheet=None, spreadsheet_id=None,
-                      worksheet=None, worksheet_id=None):
+    def set_worksheet(self, spreadsheet=None, spreadsheet_id=None, worksheet=None, worksheet_id=None):
 
         Set/channge the spreadsheet_id being used by the client using either the name or ID
         
