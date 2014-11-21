@@ -54,35 +54,44 @@ Methods
              redirect_uri="http://localhost",
              user_agent="MyClient/1.0"):
 
-Setup the client connection to the correct worksheet and authorize it.
+        Setup and authorize the connection using the data provided either at Class instantiation or the auth method.  Note, if the app does not have access to launch a web browser to complete the authorization to the user's account, then watch the console for offline instructions.
+
     def start_client(self,
                      spreadsheet=None, spreadsheet_id=None,
                      worksheet=None, worksheet_id=None):
 
-Set/change the spreadsheet_id being used by the client using either the name or ID
+        Setup the client connection to the correct worksheet and authorize it.
+
     def set_spreadsheet(self,
                         spreadsheet=None, spreadsheet_id=None):
 
-Set/channge the spreadsheet_id being used by the client using either the name or ID
+        Set/change the spreadsheet_id being used by the client using either the name or ID
+
     def set_worksheet(self,
                       spreadsheet=None, spreadsheet_id=None,
                       worksheet=None, worksheet_id=None):
 
-Retrieve a spreadsheet's ID by its name
+        Set/channge the spreadsheet_id being used by the client using either the name or ID
+        
     def get_spreadsheet_id_by_name(self, spreadsheet):
+
+        Retrieve a spreadsheet's ID by its name
+
         Returns:
             (string) spreadsheet-id
 
-Retrieve a worksheet's ID given its name and either the name or ID of the parent spreadsheet
     def get_worksheet_id_by_name(self, worksheet, spreadsheet=None, spreadsheet_id=None):
+
+        Retrieve a worksheet's ID given its name and either the name or ID of the parent spreadsheet
+
         Returns:
             (string) worksheet-id
 
-Simple method for appending a row to a worksheet
     def append_row(self, data):
-        Append a row to a worksheet.
+
+        Simple method for appending a row to a worksheet
 
         Args:
             data (dict): The keys MUST be lowercase, alpha-only, and MUST be the first row of the worksheet.
-        Returne:
+        Returns:
             a gdata row object, if successful.
