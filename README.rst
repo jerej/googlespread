@@ -12,12 +12,18 @@ Setup your project at the Google developer console:
 
 To use simply do::
 
-    >>> from googlespread.googlespread import GoogleSpread
+    >>> from googlespread import GoogleSpread
     >>> google = GoogleSpread()
     >>> google.auth(secret_json = SECRET,
-                    scope = SCOPE,
+                    scope = 'http://spreadsheets.google.com/feeds/',
                     user_agent = USER_AGENT,
                     redirect_uri = REDIRECT_URI)
 
-    >>> client = google.StartClient(spreadsheet = SPREADSHEET,
-                                    worksheet = WORKSHEET)
+    >>> client = google.StartClient(spreadsheet = "my spreadsheet",
+                                    worksheet = "sheet2")
+
+    >>> fields = {'timestamp': "This",
+                  'temperature': "and",
+                  'humidity': "That"}
+
+    >>> result = google.AppendRow(fields)
