@@ -84,5 +84,5 @@ Simple method for appending a row to a worksheet
 
         Args:
             data (dict): The keys MUST be lowercase, alpha-only, and MUST be the first row of the worksheet.
-        Returne:
+        Returns:
             a gdata row object, if successful.
